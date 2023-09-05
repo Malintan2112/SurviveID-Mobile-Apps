@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import { BackHandler, Dimensions, ToastAndroid } from 'react-native';
-import { useBackHandler } from '@react-native-community/hooks';
-import { useIsFocused } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { TransitionPresets } from '@react-navigation/stack';
+import React, { useState } from 'react'
+import { BackHandler, Dimensions, ToastAndroid } from 'react-native'
+import { useBackHandler } from '@react-native-community/hooks'
+import { useIsFocused } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { TransitionPresets } from '@react-navigation/stack'
 
-import TabBar from './TabBar';
-import HomePage from '../Pages/HomePage';
-import ProfilPage from '../Pages/ProfilPage';
-import SellAndServices from '../Pages/SellAndServices';
+import TabBar from './TabBar'
+import HomePage from '../Pages/HomePage'
+import ProfilPage from '../Pages/ProfilPage'
+import SellAndServices from '../Pages/SellAndServices'
 
-const BottomTab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator()
 const BottomTabNavigator = () => {
-  const [exit, setExit] = useState(false);
-  const isFocused = useIsFocused();
+  const [exit, setExit] = useState(false)
+  const isFocused = useIsFocused()
 
   useBackHandler(() => {
     if (isFocused) {
-      exitApp();
-      return true;
+      exitApp()
+      return true
     }
-    return false;
-  });
+    return false
+  })
 
   const exitApp = () => {
-    setTimeout(() => setExit(false), 7000);
+    setTimeout(() => setExit(false), 7000)
     setExit(state => {
       if (!state) {
         ToastAndroid.showWithGravityAndOffset(
@@ -32,30 +32,30 @@ const BottomTabNavigator = () => {
           ToastAndroid.SHORT,
           ToastAndroid.BOTTOM,
           25,
-          Dimensions.get('screen').height * 0.3,
-        );
-        return !exit;
+          Dimensions.get('screen').height * 0.3
+        )
+        return !exit
       }
-      BackHandler.exitApp();
-    });
-  };
+      BackHandler.exitApp()
+    })
+  }
   const itmData = {
     itm_source: 'homepage-sticky-Inspirasi',
     itm_campaign: 'homepage',
-    itm_term: '',
-  };
+    itm_term: ''
+  }
   const itemDetail = {
     data: {
-      url_key: 'inspirations-and-ideas',
+      url_key: 'inspirations-and-ideas'
     },
-    search: '',
-  };
+    search: ''
+  }
   const onPress = ({ navigation }) => ({
-    tabPress: e => { },
-  });
+    tabPress: e => { }
+  })
   return (
     <BottomTab.Navigator
-      initialRouteName="Home"
+      initialRouteName='Home'
       shifting={false}
       tabBarOptions={{
         activeTintColor: '#F26525',
@@ -64,13 +64,14 @@ const BottomTabNavigator = () => {
           fontFamily: 'Poppins-Bold',
           fontSize: 9,
           marginTop: -5,
-          marginBottom: 5,
-        },
+          marginBottom: 5
+        }
       }}
-      tabBar={props => <TabBar {...props} />}>
-      <BottomTab.Screen name="Home" component={HomePage} />
+      tabBar={props => <TabBar {...props} />}
+    >
+      <BottomTab.Screen name='Home' component={HomePage} />
       <BottomTab.Screen
-        name="Agenda"
+        name='Agenda'
         component={SellAndServices}
         initialParams={{ itemDetail, itmData }}
         listeners={onPress}
@@ -82,12 +83,12 @@ const BottomTabNavigator = () => {
         listeners={onPress}
       /> */}
       <BottomTab.Screen
-        name="Profil"
+        name='Profil'
         component={ProfilPage}
         listeners={onPress}
       />
     </BottomTab.Navigator>
-  );
-};
+  )
+}
 
-export default BottomTabNavigator;
+export default BottomTabNavigator

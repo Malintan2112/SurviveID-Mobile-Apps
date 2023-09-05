@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SurviveID</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">4uwCwXZOuDW-CMADE9nGeD4mC1Gxup7zdMqmI</string>
 </resources>

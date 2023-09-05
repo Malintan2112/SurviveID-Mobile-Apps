@@ -399,14 +399,6 @@ PODS:
     - glog
   - react-native-blob-util (0.17.3):
     - React-Core
-  - react-native-camera (4.2.1):
-    - React-Core
-    - react-native-camera/RCT (= 4.2.1)
-    - react-native-camera/RN (= 4.2.1)
-  - react-native-camera/RCT (4.2.1):
-    - React-Core
-  - react-native-camera/RN (4.2.1):
-    - React-Core
   - react-native-config (1.4.6):
     - react-native-config/App (= 1.4.6)
   - react-native-config/App (1.4.6):
@@ -529,13 +521,17 @@ PODS:
     - Sentry (= 7.11.0)
   - RNSVG (12.5.1):
     - React-Core
-  - RNVectorIcons (9.2.0):
+  - RNVectorIcons (10.0.0):
     - React-Core
   - Sentry (7.11.0):
     - Sentry/Core (= 7.11.0)
   - Sentry/Core (7.11.0)
   - SocketRocket (0.6.1)
   - SSZipArchive (2.2.3)
+  - VisionCamera (3.0.0):
+    - React
+    - React-callinvoker
+    - React-Core
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -589,7 +585,6 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-blob-util (from `../node_modules/react-native-blob-util`)
-  - react-native-camera (from `../node_modules/react-native-camera`)
   - react-native-config (from `../node_modules/react-native-config`)
   - react-native-pdf (from `../node_modules/react-native-pdf`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
@@ -617,6 +612,7 @@ DEPENDENCIES:
   - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - VisionCamera (from `../node_modules/react-native-vision-camera`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -700,8 +696,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   react-native-blob-util:
     :path: "../node_modules/react-native-blob-util"
-  react-native-camera:
-    :path: "../node_modules/react-native-camera"
   react-native-config:
     :path: "../node_modules/react-native-config"
   react-native-pdf:
@@ -756,6 +750,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
+  VisionCamera:
+    :path: "../node_modules/react-native-vision-camera"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -810,7 +806,6 @@ SPEC CHECKSUMS:
   React-jsinspector: 7e58fe86c7cc442fd11da0c9d8bef12a8d63f771
   React-logger: a3f6ca0d018749852a2a6f07c154bfc6fcd4195a
   react-native-blob-util: 99f4d79189252f597fe0d810c57a3733b1b1dea6
-  react-native-camera: 3eae183c1d111103963f3dd913b65d01aef8110f
   react-native-config: 7cd105e71d903104e8919261480858940a6b9c0e
   react-native-pdf: 7c0e91ada997bac8bac3bb5bea5b6b81f5a3caae
   react-native-safe-area-context: eb0b9284834d1173db8de53ef32dde3d608ee533
@@ -837,10 +832,11 @@ SPEC CHECKSUMS:
   RNScreens: f3230dd008a7d0ce5c0a8bc78ff12cf2315bda24
   RNSentry: 85f6525b5fe8d2ada065858026b338605b3c09da
   RNSVG: d7d7bc8229af3842c9cfc3a723c815a52cdd1105
-  RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
+  RNVectorIcons: 8b5bb0fa61d54cd2020af4f24a51841ce365c7e9
   Sentry: 0c5cd63d714187b4a39c331c1f0eb04ba7868341
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  VisionCamera: c4f239ef0ce8fb13937966b814f57925560f5596
   Yoga: 135109c9b8c5d1a8af3a58d21cd4c7aa7f3bf555
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

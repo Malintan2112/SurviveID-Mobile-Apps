@@ -1,11 +1,11 @@
 /**
  * Import Actions
  */
-import * as generalActions from './General';
+import * as generalActions from './General'
 
 /**
  * Combine All Actions into AppActions
  */
-const AppActions = Object.assign(generalActions);
+const AppActions = Object.assign(generalActions)
 
-export default AppActions;
+export default AppActions
