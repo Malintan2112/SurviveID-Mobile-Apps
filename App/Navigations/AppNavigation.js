@@ -10,17 +10,21 @@ import {
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 
-import Login from '../Pages/Login';
+import LoginPage from '../Pages/LoginPage';
 import CodePushService from '../Services/CodePushService';
+import BottomTabNavigator from './BottomTabNavigator';
 
 const Stack = createStackNavigator();
 
-const StackNavigator = () => (
-  <Stack.Navigator headerMode="none">
-    <Stack.Screen name='CodePushPage' component={CodePushService} />
-    <Stack.Screen name="LoginPage" component={Login} />
-  </Stack.Navigator>
-);
+const StackNavigator = () => {
+  return (
+    <Stack.Navigator headerMode="none">
+      <Stack.Screen name="CodePushPage" component={CodePushService} />
+      <Stack.Screen name="MainPage" component={BottomTabNavigator} />
+      <Stack.Screen name="LoginPage" component={LoginPage} />
+    </Stack.Navigator>
+  );
+};
 
 const Theme = {
   ...DefaultTheme,
@@ -30,8 +34,7 @@ const Theme = {
   },
 };
 
-function AppNavigation ({ reactNavigationV5Instrumentation }) {
-  // useReduxDevToolsExtension(SetTopLevelNav)
+function AppNavigation({ reactNavigationV5Instrumentation }) {
   React.useEffect(() => {
     return () => {
       isReadyRef.current = false;
@@ -46,7 +49,6 @@ function AppNavigation ({ reactNavigationV5Instrumentation }) {
       onReady={() => {
         // isReadyRef.current = true;
         // dispatchQueuedActions();
-        // // eslint-disable-next-line prettier/prettier
         // reactNavigationV5Instrumentation.registerNavigationContainer(navigationRef);
       }}
     >

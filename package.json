@@ -4,10 +4,14 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:createBundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    "lint": "standard --verbose | snazzy",
+    "deploy-apk": "fastlane android dev",
+    "deploy-android-bundle": "npm run android:createBundle && fastlane android codepush",
+    "rollback-deploy-android": "appcenter codepush rollback -a Kreasi-Putra-Nusantara/artetis  Production",
     "postinstall": "patch-package"
   },
   "dependencies": {
